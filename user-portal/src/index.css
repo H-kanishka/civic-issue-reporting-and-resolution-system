@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Civic App Design System - Indian Flag Theme (Orange, Green, White) */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Orange (Saffron) - Primary */
+    --primary: 30 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 30 100% 60%;
+    --primary-dark: 30 100% 40%;
+
+    /* Green - Secondary */
+    --secondary: 120 100% 25%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 120 20% 95%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 120 100% 25%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status Colors */
+    --success: 120 100% 25%; /* Green */
+    --success-foreground: 0 0% 100%;
+    --warning: 30 100% 50%; /* Orange */
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* System Colors */
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 30 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Indian Flag Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(34, 80%, 56%), hsl(98, 79%, 34%));
+    --gradient-hero: linear-gradient(135deg, hsl(30 100% 50%) 0%, hsl(120 100% 25%) 100%);
+    --gradient-card: linear-gradient(100deg, hsl(180, 25%, 87%));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsl(30 100% 50% / 0.1);
+    --shadow-medium: 0 4px 16px hsl(30 100% 50% / 0.15);
+    --shadow-strong: 0 8px 32px hsl(30 100% 50% / 0.2);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 30 100% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 120 100% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 30 100% 50%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 30 100% 50%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 120 100% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 120 32% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 120 100% 25%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 120 32% 17.5%;
+    --input: 120 32% 17.5%;
+    --ring: 30 100% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 30 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 120 100% 25%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 30 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-medium antialiased;
+    background: hsl(0, 30%, 98%); /* Light Orange Background */
+  }
+
+  /* Civic-specific utilities */
+  .civic-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .civic-hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .civic-card-gradient {
+    background: var(--gradient-card);
+  }
+  
+  .civic-shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .civic-shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .civic-shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  .civic-transition {
+    transition: var(--transition-smooth);
+  }
+
+  /* ✅ Tricolor Card with Softer Background */
+  .card {
+    border: 4px solid transparent;
+    border-radius: var(--radius);
+    background: 
+      linear-gradient(145deg, hsl(0 0% 100%), hsl(120 40% 97%)) padding-box, /* Soft white to very light green */
+      linear-gradient(90deg, hsl(30 100% 50%), hsl(0 0% 100%), hsl(120 100% 25%)) border-box;
+    transition: all 0.3s ease-in-out;
+  }
+ 
+  .card:hover {
+    box-shadow: 0 0 15px hsl(30 100% 50% / 0.6), 
+                0 0 15px hsl(120 100% 25% / 0.6);
+    transform: translateY(-4px);
+  }
+}
