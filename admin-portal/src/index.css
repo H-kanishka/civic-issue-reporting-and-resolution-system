@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Indian Government Admin Dashboard Design System */
+
+@layer base {
+  :root {
+    /* Indian Flag Color Palette */
+    --saffron: 25 100% 60%;        /* #FF9933 */
+    --saffron-light: 25 100% 70%;  /* Lighter saffron */
+    --saffron-dark: 25 100% 45%;   /* Darker saffron */
+    --forest-green: 120 80% 25%;   /* #138808 */
+    --forest-green-light: 120 60% 35%;
+    --forest-green-dark: 120 90% 20%;
+    --navy-blue: 240 100% 25%;     /* #000080 */
+    --navy-blue-light: 240 80% 35%;
+    --pure-white: 0 0% 100%;       /* #FFFFFF */
+    
+    /* Background Colors */
+    --background: var(--pure-white);
+    --background-secondary: 25 30% 97%;
+    --background-accent: 25 20% 95%;
+    --foreground: 240 10% 15%;
+
+    /* Component Colors using Indian Flag Palette */
+    --card: var(--pure-white);
+    --card-foreground: var(--foreground);
+    --card-border: 25 25% 90%;
+
+    --popover: var(--pure-white);
+    --popover-foreground: var(--foreground);
+
+    --primary: var(--saffron);
+    --primary-foreground: var(--pure-white);
+
+    --secondary: var(--forest-green);
+    --secondary-foreground: var(--pure-white);
+
+    --muted: var(--background-accent);
+    --muted-foreground: 240 5% 50%;
+
+    --accent: var(--navy-blue);
+    --accent-foreground: var(--pure-white);
+
+    /* Status Colors */
+    --success: var(--forest-green);
+    --success-foreground: var(--pure-white);
+    --warning: 40 100% 50%;
+    --warning-foreground: var(--pure-white);
+    --danger: 0 75% 55%;
+    --danger-foreground: var(--pure-white);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--saffron)), hsl(var(--saffron-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--forest-green)), hsl(var(--forest-green-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--saffron)), hsl(var(--forest-green)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--background-secondary)));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px hsl(var(--saffron) / 0.1);
+    --shadow-md: 0 4px 12px hsl(var(--saffron) / 0.15);
+    --shadow-lg: 0 8px 25px hsl(var(--saffron) / 0.2);
+    --shadow-success: 0 4px 12px hsl(var(--forest-green) / 0.3);
+    --shadow-accent: 0 4px 12px hsl(var(--navy-blue) / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+
+    /* Input & Form Colors */
+    --border: 25 25% 90%;
+    --input: var(--background-secondary);
+    --ring: var(--saffron);
+
+    --radius: 0.5rem;
+
+    /* Sidebar (using Indian theme) */
+    --sidebar-background: var(--background-secondary);
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--saffron);
+    --sidebar-primary-foreground: var(--pure-white);
+    --sidebar-accent: var(--background-accent);
+    --sidebar-accent-foreground: var(--foreground);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--saffron);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer utilities {
+  /* Indian Flag Gradients */  
+  .bg-gradient-saffron {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-green {
+    background: var(--gradient-secondary);
+  }
+  
+  .bg-gradient-patriot {
+    background: var(--gradient-hero);
+  }
+  
+  /* Custom Shadows */
+  .shadow-saffron {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-success {
+    box-shadow: var(--shadow-success);
+  }
+  
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-fast {
+    transition: var(--transition-fast);
+  }
+}
